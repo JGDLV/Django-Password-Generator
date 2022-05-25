@@ -1,0 +1,33 @@
+{% extends 'generator/base.html' %}
+
+{% block content %}
+
+<div class="generator">
+  <form action="{% url 'password' %}" class="generator-form">
+    <h1 class="generator-form__header">Генератор паролей</h1>
+    <label class="generator-form__label generator-form__label_length">
+      <p class="generator-form__title">Длина пароля:</p>
+      <input class="generator-form__input generator-form__input-length" id="length" type="number" name="length" value="12" min="4" max="100">
+    </label>
+    <div class="generator-form__inner">
+      <label class="generator-form__label">
+        <p class="generator-form__title">Заглавные буквы</p>
+        <input type="checkbox" name="uppercase">
+      </label>
+      <label class="generator-form__label">
+        <p class="generator-form__title">Цифры</p>
+        <input type="checkbox" name="numbers">
+      </label>
+      <label class="generator-form__label">
+        <p class="generator-form__title">Спецсимволы</p>
+        <input type="checkbox" name="specials">
+      </label>
+    </div>
+    <div class="generator-form__buttons">
+      <button class="generator-form__button btn" type="submit">Сгенерировать</button>
+      <div class="generator-form__info"><a class="generator__link generator__link_dashed generator__link_safe" href="#">Мне нужен пароль понадежнее!</a></div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
